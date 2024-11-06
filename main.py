@@ -1,9 +1,14 @@
+import os
+
 import requests
 from bs4 import BeautifulSoup
 from base64 import b64decode
+from dotenv import load_dotenv
 
+
+load_dotenv()
 BASE_URL = "https://aniworld.to"
-COOKIES = {"aniworld_session": "xxxxxxxxx"}
+COOKIES = {"aniworld_session": os.getenv("ANIWORLD_SESSION")}
 
 
 def get_episode_page(url, cookies):
